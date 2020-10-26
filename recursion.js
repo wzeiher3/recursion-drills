@@ -9,13 +9,16 @@ function countSheep(num){
 }
 
 function powerCalculator(base, exp){
+
     if(exp === 1)
-        return console.log(base);
+        return base;
     if(exp < 0)
         return console.log('Exponent must be greater than zero');
 
-    powerCalculator(base*base, exp -= 1);
+    return base * powerCalculator(base, exp - 1);
+    
 }
 
-countSheep(3);
-powerCalculator(10, 3);
+//countSheep(3);
+console.log(powerCalculator(2, 4));
+
