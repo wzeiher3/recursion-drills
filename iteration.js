@@ -14,7 +14,26 @@ function powerCalculator(base, exp) {
     for (let i = 0; i < exp - 1; i++) {
         total *= base
     }
-        console.log(total);
+    console.log(total);
+}
+
+function reverseString(str){
+    let newStr = ''
+    for(let i = str.length-1; i >= 0; i--)
+    {
+        newStr += str[i];
+    }
+
+    console.log(newStr);
+}
+
+function triangle(num){
+    let total = 0;
+    for(let i = num; i >= 0; i--)
+    {
+        total += i;
+    }
+    console.log(total)
 }
 
 
@@ -23,7 +42,7 @@ function powerCalculator(base, exp) {
 // countSheep(3);
 // console.log(powerCalculator(2, 4));
 //console.log(reverseString('Josh'));
-// console.log(triangle(6));
+console.log(triangle(6));
 // console.log(split('02/20/2020', '/'))
 // console.log("1",fibonacci(6))
 // console.log("2",fibonacci2(6));
