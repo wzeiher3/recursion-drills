@@ -1,5 +1,7 @@
 'use strict';
 
+
+//O(n)
 function countSheep(num) {
     if (num === 0)
         return console.log("All sheep jumped over the fence");
@@ -8,6 +10,7 @@ function countSheep(num) {
     countSheep(num -= 1);
 }
 
+//O(n)
 function powerCalculator(base, exp) {
 
     if (exp === 1)
@@ -18,6 +21,7 @@ function powerCalculator(base, exp) {
     return base * powerCalculator(base, exp - 1);
 }
 
+//O(n)
 function reverseString(thisString) {
     if (thisString.length === 1) {
         return thisString[thisString.length - 1]
@@ -28,6 +32,7 @@ function reverseString(thisString) {
     // thisString.slice(thisString[thisString.length -1])
 }
 
+//O(n)
 function triangle(num) {
 
     if (num === 0)
@@ -36,6 +41,7 @@ function triangle(num) {
     return num + triangle(num - 1);
 }
 
+//O(n)
 function split(string, char, result = [""]) {
     if (string.length === 0) {
         return result
@@ -54,6 +60,8 @@ function split(string, char, result = [""]) {
 //2. Start with 0 and 1
 //3. Add first number with second number, then slice first number, sum becomes second number [0, 1] becomes [1, 1], then [1, 2], then [2, 3], [3, 5]...
 //4. repeat this sequence n amount of times and return the last number
+
+//O(n)
 function fibonacci2(num) {
     if (num === 0)
         return "num can't be zero"
@@ -67,6 +75,7 @@ function fibonacci2(num) {
     // fib = str[n-1] + str[n-2]
 }
 
+//O(n)
 function fibonacci(n) {
     if (n < 1) {
         return 0
@@ -82,7 +91,7 @@ function fibonacci(n) {
 //         : n <= 2 ? 1
 //         : fibonacci(n - 1) + fibonacci(n - 2);
 // }
-
+//O(n)
 function factorial(num) {
     if (num === 1)
         return num;
@@ -99,16 +108,19 @@ let mySmallMaze = [
 ];
 
 let maze = [
-    [' ', ' ', ' ', '*', ' ', ' ', ' '],
-    ['*', '*', ' ', '*', ' ', '*', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', '*', '*', '*', '*', '*', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', 'e']
+    // [' ', ' ', ' ', '*', ' ', ' ', ' '],
+    // ['*', '*', ' ', '*', ' ', '*', ' '],
+    // [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+    // [' ', '*', '*', '*', '*', '*', ' '],
+	// [' ', ' ', ' ', ' ', ' ', ' ', 'e']
+	
+	[' ', ' ', ' '],
+    [' ', '*', ' '],
+    [' ', ' ', 'e']
 ];
 
-
+let counter = 0;
 function myMaze(maze, col, row, direction = 's', position = 0, path) {
-
     if (col < 0 || row < 0) {
         return
     }
@@ -129,10 +141,12 @@ function myMaze(maze, col, row, direction = 's', position = 0, path) {
         myMaze(maze, col, row + 1, 'd', position, path)
         maze[row][col]= ' '
     }
-    position--
+	position--
+	counter++;
+	console.log(counter)
 }
 
-
+//O(n^k)
 function anagram(prefix, str){
     if(str.length <= 1)
         console.log(`The anagram is ${prefix}${str}`)
@@ -210,6 +224,7 @@ var organization = {
 			}
 }}};
 
+//O(n)
 function traverse(node, indent=0){
     for(var key in node){
         console.log(" ".repeat(indent), key);
@@ -217,10 +232,19 @@ function traverse(node, indent=0){
     }
 }
 
+11010110
+
+1101
+
+let anotherCount = 0;
+
+//O(n)
 function generateBinary(n, i=0, toAdd='', s='') {
     s += toAdd;
     if (i === n) {
-        console.log(s);
+		//console.log(s);
+		anotherCount++;
+		console.log(anotherCount);
         return;
     }
 
@@ -228,7 +252,7 @@ function generateBinary(n, i=0, toAdd='', s='') {
     generateBinary(n, i+1, 1, s);
 }
 
-console.log(generateBinary(3))
+//console.log(generateBinary(3))
 //countSheep(3);
 //console.log(powerCalculator(2, 4));
 //console.log(reverseString('Josh'));
@@ -237,6 +261,7 @@ console.log(generateBinary(3))
 // console.log("1",fibonacci(6))
 // console.log("2",fibonacci2(6));
 // console.log(factorial(5));
-// myMaze(maze,0,0,'s',0,[])
+//myMaze(maze,0,0,'s',0,[])
 // anagram(' ', 'thinkful');
 //console.log(traverse(organization))
+generateBinary(5);
