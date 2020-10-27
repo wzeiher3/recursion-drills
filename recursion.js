@@ -264,4 +264,4 @@ function generateBinary(n, i=0, toAdd='', s='') {
 //myMaze(maze,0,0,'s',0,[])
 // anagram(' ', 'thinkful');
 //console.log(traverse(organization))
-generateBinary(5);
+//generateBinary(5);
